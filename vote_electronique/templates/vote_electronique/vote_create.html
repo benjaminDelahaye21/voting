@@ -6,6 +6,8 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <input type="radio" name="{{ form.candidat.html_name }}" value="{{ candidat.pk }}" id="{{ form.candidat.auto_id }}_{{ forloop.counter0 }}">
+
     <button type="submit">Voter</button>
   </form>
 {% endblock %}
