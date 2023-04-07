@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ election.titre }}</h1>
+    <h2>Candidats</h2>
+    <ul>
+        {% for candidat in candidats %}
+            <li>{{ candidat.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'vote' election.id %}">Votez</a>
+{% endblock %}
+
