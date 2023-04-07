@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Bienvenue sur la page d'accueil</h2>
+  {% if user.is_authenticated %}
+    <p>Bonjour, {{ user.username }}!</p>
+    <a href="{% url 'deconnexion' %}">Se déconnecter</a>
+  {% else %}
+    <p>Vous n'êtes pas connecté(e).</p>
+    <a href="{% url 'connexion' %}">Se connecter</a> | <a href="{% url 'inscription' %}">S'inscrire</a>
+  {% endif %}
+{% endblock %}
+

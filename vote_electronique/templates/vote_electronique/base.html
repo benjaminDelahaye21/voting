@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote électronique</title>
+    <title>{% block title %}Système de vote{% endblock %}</title>
+    <!-- Ajoutez ici d'autres éléments d'en-tête, tels que les liens vers les feuilles de style CSS ou les scripts JavaScript -->
 </head>
 <body>
-    <div id="content">
+    <nav>
+        <!-- Ajoutez ici la barre de navigation ou le menu de votre choix -->
+    </nav>
+    <main>
         {% block content %}
+        <!-- Le contenu spécifique à chaque page sera inséré ici -->
         {% endblock %}
-    </div>
+    </main>
+    <footer>
+        <!-- Ajoutez ici le pied de page de votre choix -->
+    </footer>
 </body>
 </html>
 

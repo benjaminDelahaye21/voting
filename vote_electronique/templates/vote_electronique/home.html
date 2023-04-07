@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue sur le système de vote électronique</h1>
+    <p>
+        {% if user.is_authenticated %}
+            Bienvenue, {{ user.username }}! <a href="{% url 'logout' %}">Se déconnecter</a>
+        {% else %}
+            <a href="{% url 'register' %}">S'inscrire</a> ou <a href="{% url 'login' %}">Se connecter</a> pour accéder aux fonctionnalités.
+        {% endif %}
+    </p>
+{% endblock %}
+
