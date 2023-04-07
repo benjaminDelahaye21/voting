@@ -1,0 +1,18 @@
+{% extends 'vote_electronique/base_generic.html' %}
+
+{% block content %}
+  <h1>Liste des élections</h1>
+
+  <ul>
+    {% for election in election_list %}
+      <li>
+        <a href="{% url 'vote_electronique:election_detail' election.id %}">
+          {{ election.nom }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'vote_electronique:election_create' %}">Créer une nouvelle élection</a>
+{% endblock %}
+

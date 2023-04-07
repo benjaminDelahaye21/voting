@@ -11,7 +11,7 @@ class Election(models.Model):
     titre = models.CharField(max_length=100)
     date_debut = models.DateTimeField()
     date_fin = models.DateTimeField()
-    candidats = models.ManyToManyField('Candidat')
+    candidats = models.ManyToManyField('Candidat',related_name='elections')
 
 class Candidat(models.Model):
     nom = models.CharField(max_length=100)

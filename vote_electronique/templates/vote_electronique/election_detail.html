@@ -1,0 +1,16 @@
+{% extends 'vote_electronique/base_generic.html' %}
+
+{% block content %}
+  <h1>{{ election.nom }}</h1>
+
+  <h2>Candidats</h2>
+  <ul>
+    {% for candidat in election.candidats.all %}
+      <li>{{ candidat.prenom }} {{ candidat.nom }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'vote_electronique:candidat_create' election.id %}">Ajouter un candidat</a>
+  <a href="{% url 'vote_electronique:vote_create' election.id %}">Voter</a>
+{% endblock %}
+

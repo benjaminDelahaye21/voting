@@ -1,0 +1,12 @@
+{% extends 'vote_electronique/base_generic.html' %}
+
+{% block content %}
+  <h1>Voter pour l'élection {{ election.nom }}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Voter</button>
+  </form>
+{% endblock %}
+
