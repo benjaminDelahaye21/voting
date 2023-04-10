@@ -1,11 +1,25 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{# Load the tag library #}
+{% load bootstrap5 %}
+{% load static %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+{% block title %}Connexion{% endblock %}
 
 {% block content %}
-  <h2>Connexion</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Se connecter</button>
-  </form>
+    <h1>Connexion</h1>
+    <form method="POST" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+      <button type="submit" class="btn btn-primary" lang="fr">se connecter</button>
+     {% endbuttons %}
+	    
+    </form>
 {% endblock %}
 

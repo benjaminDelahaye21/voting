@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vote_electronique',
+    'bootstrap5',
+    'bootstrap',
+    'fontawesome',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +57,7 @@ ROOT_URLCONF = 'eVote.urls'
 
 TEMPLATES = [
     {
+        'APP_DIRS': True,
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
