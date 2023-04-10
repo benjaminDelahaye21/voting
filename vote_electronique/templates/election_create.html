@@ -1,12 +1,12 @@
-{% extends 'vote_electronique/base_generic.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-  <h1>Créer une nouvelle élection</h1>
-
-  <form method="post">
+<div class="container">
+  <h2 class="my-4">Créer une élection</h2>
+  <form method="post" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Créer</button>
+    {{ form|bootstrap }}
+    <button type="submit" class="btn btn-primary">Créer</button>
   </form>
+</div>
 {% endblock %}
-

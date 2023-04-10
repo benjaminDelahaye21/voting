@@ -1,12 +1,13 @@
-{% extends 'vote_electronique/base_generic.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-  <h1>Ajouter un candidat à l'élection {{ election.nom }}</h1>
-
-  <form method="post">
+<div class="container">
+  <h2 class="my-4">Ajouter un candidat</h2>
+  <form method="post" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Ajouter</button>
+    {{ form|bootstrap }}
+    <button type="submit" class="btn btn-primary">Ajouter</button>
   </form>
+</div>
 {% endblock %}
 

@@ -1,11 +1,24 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{# Load the tag library #}
+{% load bootstrap5 %}
+{% load static %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 
 {% block content %}
-  <h2>Inscription</h2>
-  <form method="post">
+<div class="container">
+  <h2 class="my-4">Inscription</h2>
+  <form method="post" novalidate class="form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">S'inscrire</button>
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+     {% endbuttons %}
   </form>
+</div>
 {% endblock %}
 
